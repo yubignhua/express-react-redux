@@ -1,0 +1,18 @@
+@import '../../assets/style/base.scss';
+.not_find_page{
+  font-family: 'PingFangSC-Light';
+  position: relative;
+  .no_page{
+    position: absolute;
+    z-index: 1;
+    font-size: rem(14);
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top:rem(-40);
+    color: #999999;
+  }
+  .mContent{
+
+  }
+}

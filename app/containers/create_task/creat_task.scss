@@ -1,0 +1,19 @@
+@import '../../assets/style/base.scss';
+.register{
+  .btn_wraper{
+    position: relative;
+    .am-button-primary{
+      height: rem(40);
+      line-height: rem(40);
+      font-size: rem(15);
+      width:70%;
+      margin-top:20px;
+      display: inline-block;
+      position: absolute;
+      left:50%;
+      left: 50%;
+      margin-left: -35%;
+    }
+  }
+
+}

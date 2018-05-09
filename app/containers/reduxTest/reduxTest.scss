@@ -1,0 +1,95 @@
+$screen-width: 37.5;
+@function rem($px) {
+  @return $px / $screen-width * 1rem;
+}
+
+@mixin arrow($direction,$size,$color) {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  border-width: $size;
+  cursor: pointer;
+  @if $direction == top {
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent $color transparent;
+    border-top: none;
+  }
+  @else if $direction == bottom {
+    border-style: solid dashed dashed dashed;
+    border-color: $color transparent transparent transparent;
+    border-bottom: none;
+  }
+  @else if $direction == right {
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent $color;
+    border-right: none;
+  }
+  @else if $direction == left {
+    border-style: dashed solid dashed dashed;
+    border-color: transparent $color transparent transparent;
+    border-left: none;
+  }
+}
+
+
+
+
+
+
+
+.mysecondcomp{
+    width: rem(300);
+    font-size:rem(15);
+  .title{
+        padding-bottom:10px;
+    }
+    .mybox{
+        color: #f2f8ff;
+        height: 3rem;
+        width:100%;
+    }
+     .msc-wraper {
+        overflow: hidden;
+         .item{
+             float: left;
+         }
+         span{
+             color: #4551ff;
+             padding-left:10px;
+             cursor: pointer;
+             float: right;
+         }
+    }
+  .arrow{
+    @include arrow('top',10,red)
+  }
+
+
+
+
+
+  .cy-sec-item {
+    padding: .1rem .15rem .1rem 0;
+    border-bottom: 1px solid #d6d6d6;
+
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    display: -webkit-flex;
+    display: flex;
+
+
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+}
+
+

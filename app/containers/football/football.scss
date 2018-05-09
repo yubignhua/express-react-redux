@@ -1,0 +1,25 @@
+@import '../../assets/style/base.scss';
+.models{
+  .react-slide{
+    top:39px;
+  }
+  .react-tab .tabs{
+    font-size: rem(13);
+  }
+  height:100%;
+  width:100%;
+  .roundNum{
+    display: flex;
+    width:rem(100);
+    height:rem(100);
+    background: url("../../assets/img/icon_01.jpg") no-repeat;
+    background-size: 100% 100%;
+  }
+  .haha{
+    width:rem(100);
+    height:rem(100);
+    background: url("../../assets/img/123.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+}

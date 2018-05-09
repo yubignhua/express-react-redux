@@ -1,0 +1,121 @@
+$screen-width: 37.5;
+@function rem($px) {
+  @return $px / $screen-width * 1rem;
+}
+
+//箭头
+@mixin m_arrow($direction,$size,$color) {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  border-width: $size;
+  cursor: pointer;
+  @if $direction == top {
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent $color transparent;
+    border-top: none;
+  }
+  @else if $direction == bottom {
+    border-style: solid dashed dashed dashed;
+    border-color: $color transparent transparent transparent;
+    border-bottom: none;
+  }
+  @else if $direction == right {
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent $color;
+    border-right: none;
+  }
+  @else if $direction == left {
+    border-style: dashed solid dashed dashed;
+    border-color: transparent $color transparent transparent;
+    border-left: none;
+  }
+}
+
+
+@mixin arrow(){
+  position:absolute;
+  top:50%;
+  right:50%;
+  display:block;
+  width:8px;
+  height:8px;
+  -webkit-transform:rotate(-133deg);
+  transform:rotate(-133deg);//箭头朝向下
+  transform:rotate(-225deg);//箭头朝向左边
+  border-left:1px solid #C2C2C2;
+  border-top:1px solid #C2C2C2;
+}
+
+//一行 ...显示
+@mixin ell(){
+  text-overflow:ellipsis; //设置溢出内容为省略号显示
+  white-space:nowrap; //强制文本单行显示
+  overflow:hidden;//溢出内容设为隐藏
+}
+
+
+// 绝对居中
+@mixin center($width, $height) {
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:$width;
+  height:$height;
+  margin:(-$height / 2) 0 0 (-$width / 2);
+}
+
+//设置动画名称
+@mixin animation($aniName) {
+  -webkit-animation:$aniName;
+  -moz-animation:$aniName;
+  -o-animation:$aniName;
+  animation:$aniName;
+}
+// 设置延迟执行时间
+@mixin animation-delay($time) {
+  -webkit-animation-delay:$time;
+  -moz-animation-delay:$time;
+  -o-animation-delay:$time;
+  animation-delay:$time;
+}
+// 设置阴影
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  -o-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+// 圆角
+@mixin border-radius($radius) {
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  -o-border-radius:$radius;
+  border-radius:$radius;
+}
+//设置过渡
+@mixin transition($transition...) {
+  -webkit-transition:$transition;
+  -moz-transition:$transition;
+  -o-transition:$transition;
+  transition:$transition;
+}
+
+
+// 设置关键帧
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    $browser: '-webkit-'; @content;
+  }
+  @-moz-keyframes #{$name} {
+    $browser: '-moz-'; @content;
+  }
+  @-o-keyframes #{$name} {
+    $browser: '-o-'; @content;
+  }
+  @keyframes #{$name} {
+    $browser: ''; @content;
+  }
+}

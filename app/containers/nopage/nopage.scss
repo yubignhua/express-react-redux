@@ -1,0 +1,17 @@
+@import '../../assets/style/base.scss';
+.nopage{
+  .items{
+    background-size: 100% 100%;
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
+    height:(50);
+    line-height:rem(50);
+    &:nth-child(2n){
+      background: #bdb8c4;
+    }
+    &:nth-child(2n-1){
+      background: #97c4ab;
+    }
+  }
+}
